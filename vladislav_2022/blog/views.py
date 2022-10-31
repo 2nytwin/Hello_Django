@@ -1,18 +1,18 @@
 from django.shortcuts import render
-from .models import Comment
+from .models import Comment, Post
 
 
 def blog_index(request):
-    comms = Comment.objects.orderby('created_on')[:-1]
+    posts = Post.objects.all().orderby('created_on')[:-1]
     context = {
-        'comments': comms
+        'posts': posts
     }
-    return render(request, context)
+    return render(request, 'blog_index.html', context)
 
 
 def blog_detail(request, pk):
-    comm = Comment.objects.get(pk=pk)
+    post = Post.objects.get(pk=pk)
     context = {
-        'comment': comm
+        'post': post
     }
-    return render(request, context)
+    return render(request, 'blog_detail.html', context)
