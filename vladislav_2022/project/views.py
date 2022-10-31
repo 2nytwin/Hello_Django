@@ -18,9 +18,9 @@ def project_detail(request, pk):
     return render(request, 'project_detail.html', context)
 
 
-def blog_index(request):
-    project = Project.objects.all()
-    context = {
-
-    }
-    return render(request, 'project_detail.html', context)
+# def blog_index(request):
+#     project = Project.objects.all()
+#     context = {
+#
+#     }
+#     return render(request, 'project_detail.html', context)
