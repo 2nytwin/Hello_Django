@@ -3,7 +3,7 @@
 <div class="col-md-8 offset-md-2">
   <h1>Блог</h1>
   <hr>
-  {% for post in posts %}
+ {% for post in posts %}
   <h2><a href="{% url 'blog_getail' post.pk%}">{{ post.title }}</a></h2>
   <small>
       {{ post.created_on.date }}
